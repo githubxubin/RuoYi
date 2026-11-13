@@ -12,6 +12,7 @@ import java.time.Duration;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import com.alibaba.fastjson2.JSON;
@@ -49,6 +50,7 @@ public class DeepSeekCustomerServiceImpl implements ICustomerService
 
     private final Duration requestTimeout;
 
+    @Autowired
     public DeepSeekCustomerServiceImpl(@Value("${DEEPSEEK_API_KEY:}") String apiKey,
             @Value("${DEEPSEEK_BASE_URL:https://api.deepseek.com}") String baseUrl,
             @Value("${DEEPSEEK_MODEL:deepseek-flash}") String model)
