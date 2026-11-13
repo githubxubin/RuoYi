@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="renderer" content="webkit">
+    <meta th:content="${session.csrf_token}" name="csrf-token"/>
     <title>若依系统首页</title>
     <!-- 避免IE使用兼容模式 -->
  	<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -15,6 +16,7 @@
     <link th:href="@{/css/style.min.css}" rel="stylesheet"/>
     <link th:href="@{/css/skins.css}" rel="stylesheet"/>
     <link th:href="@{/ruoyi/css/ry-ui.css?v=4.8.3}" rel="stylesheet"/>
+    <link th:href="@{/ruoyi/css/customer-service.css}" rel="stylesheet"/>
     <style type="text/css">#noticeItems li a{transition:background .15s;border-radius:2px}#noticeItems li a:hover{background:#f7f9fb;text-decoration:none}#noticeItems li a:active{background:#eef2f7}#noticeItems li a:focus{background:transparent;outline:0}#noticeList .mark-all-read{font-size:12px;color:#5b9bd5;text-decoration:none;padding:2px 8px;border-radius:3px;transition:background 0.15s}#noticeList .mark-all-read:hover{background:#eef5fc;color:#2b7cc1}#noticeList .mark-all-read:active{background:#eef5fc;color:#2b7cc1}#noticeList .mark-all-read:focus{outline:none;background:transparent}
 </style>
 </head>
@@ -274,6 +276,23 @@
     </div>
     <!--右侧部分结束-->
 </div>
+<div id="customerService" class="customer-service" th:data-chat-url="@{/system/customer-service/chat}">
+    <section id="customerServicePanel" class="customer-service-panel" role="dialog" aria-labelledby="customerServiceTitle" hidden>
+        <div class="customer-service-header">
+            <h2 id="customerServiceTitle"><i class="fa fa-comments" aria-hidden="true"></i> DeepSeek 客服</h2>
+            <button id="customerServiceClose" class="customer-service-close" type="button" aria-label="关闭客服面板"><i class="fa fa-times" aria-hidden="true"></i></button>
+        </div>
+        <div id="customerServiceMessages" class="customer-service-messages" aria-live="polite" aria-relevant="additions text"></div>
+        <form id="customerServiceForm" class="customer-service-form">
+            <label class="sr-only" for="customerServiceInput">请输入您的问题</label>
+            <textarea id="customerServiceInput" rows="2" maxlength="2000" placeholder="请输入您的问题，Enter 发送，Shift+Enter 换行" aria-label="客服问题"></textarea>
+            <button id="customerServiceSend" class="btn btn-primary" type="submit">发送</button>
+        </form>
+    </section>
+    <button id="customerServiceToggle" class="customer-service-toggle" type="button" aria-label="打开 DeepSeek 客服" aria-controls="customerServicePanel" aria-expanded="false">
+        <i class="fa fa-comments" aria-hidden="true"></i>
+    </button>
+</div>
 <!-- 全局js -->
 <script th:src="@{/js/jquery.min.js}"></script>
 <script th:src="@{/js/bootstrap.min.js}"></script>
@@ -286,6 +305,7 @@
 <script th:src="@{/ruoyi/js/common.js?v=4.8.3}"></script>
 <script th:src="@{/ruoyi/index.js?v=20201208}"></script>
 <script th:src="@{/ajax/libs/fullscreen/jquery.fullscreen.js}"></script>
+<script th:src="@{/ruoyi/js/customer-service.js}"></script>
 <script th:inline="javascript">
 window.history.forward(1);
 var ctx = [[@{/}]]; 
