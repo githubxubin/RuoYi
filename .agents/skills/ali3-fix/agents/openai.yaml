@@ -1,0 +1,6 @@
+interface:
+  display_name: "阿里三缺陷修复"
+  short_description: "只描述问题，自动完成复现、根因、修复和复测"
+  default_prompt: "使用 $ali3-fix 修复这个问题："
+policy:
+  allow_implicit_invocation: true

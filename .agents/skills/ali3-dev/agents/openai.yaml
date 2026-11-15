@@ -1,0 +1,6 @@
+interface:
+  display_name: "阿里三多智能体开发"
+  short_description: "带计划、测试追踪和审计证据的 Orca 多智能体开发流程"
+  default_prompt: "使用 $ali3-dev 开发功能：请在这里描述需要新增或修改的功能。"
+policy:
+  allow_implicit_invocation: true

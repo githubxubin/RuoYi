@@ -1,0 +1,6 @@
+interface:
+  display_name: "阿里三代码审查"
+  short_description: "审查当前差异并核对需求、测试和证据追踪"
+  default_prompt: "使用 $ali3-review 审查当前代码差异。"
+policy:
+  allow_implicit_invocation: true

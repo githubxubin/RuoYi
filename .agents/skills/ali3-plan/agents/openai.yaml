@@ -1,0 +1,6 @@
+interface:
+  display_name: "阿里三开发规划"
+  short_description: "输入需求，生成需求、实施、编码和测试计划"
+  default_prompt: "使用 $ali3-plan 规划这个需求："
+policy:
+  allow_implicit_invocation: true

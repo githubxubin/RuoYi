@@ -1,0 +1,6 @@
+interface:
+  display_name: "阿里三编码实施"
+  short_description: "自动读取当前计划，实施指定 DEV 编码任务"
+  default_prompt: "使用 $ali3-implement 执行当前已确认的编码任务。"
+policy:
+  allow_implicit_invocation: true
