@@ -23,10 +23,10 @@ $ali3-implement DEV-01
 
 ## 执行
 
-1. 读取目标仓库规则、选中任务的 `01`～`04` 文档、[统一实现规则](../ali3-dev/references/implementation.md) 和 [交付证据规则](../ali3-dev/references/delivery-evidence.md)。
+1. 读取目标仓库规则、选中任务的 `01`～`04` 文档、[效率与范围控制](../ali3-dev/references/efficiency.md)、[统一实现规则](../ali3-dev/references/implementation.md) 和 [交付证据规则](../ali3-dev/references/delivery-evidence.md)。
 2. 只实施选中 DEV 的允许范围；保持最小改动，不处理无关问题。
-3. 完成对应单元测试和定向检查，记录实际命令、退出码、结果和证据。
+3. 只完成对应单元测试和最小定向检查；数据库、E2E、真实外部 API和全量回归留给主控验收。记录实际命令、退出码、结果和证据。
 4. 在主控/集成工作树中更新 `03-coding-plan.md` 和 `05-unit-test-report.md`；在 Orca 子工作树中不要修改治理文档，只返回关联 AC/DEV、修改文件、命令结果、证据、未验证项和风险，交主控汇总。
-5. 不自行创建其他 Agent。需要并行时仅输出任务单，由用户创建并选择模型。
+5. 不自行创建其他 Agent。需要并行时仅输出 Orca 任务单，由用户创建并选择模型；禁止模型或 CLI 内置子 Agent和私有工作树。
 
 未经明确授权不得提交、推送、合并、部署或操作生产/共享数据库。
